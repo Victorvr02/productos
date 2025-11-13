@@ -5,7 +5,7 @@ export const getProductos = async (req, res) => {
     const [rows] = await pool.query("SELECT * FROM producto");
     res.json(rows);
   } catch (error) {
-    return res.status(500).json({ message: "Something goes wrong" });
+    return res.status(500).json({ message: "No funcionó" });
   }
 };
 
@@ -22,7 +22,7 @@ export const getProducto = async (req, res) => {
 
     res.json(rows[0]);
   } catch (error) {
-    return res.status(500).json({ message: "Something goes wrong" });
+    return res.status(500).json({ message: "No funcionó" });
   }
 };
 
@@ -37,7 +37,7 @@ export const deleteProducto = async (req, res) => {
 
     res.sendStatus(204);
   } catch (error) {
-    return res.status(500).json({ message: "Something goes wrong" });
+    return res.status(500).json({ message: "No funcionó" });
   }
 };
 
@@ -50,7 +50,7 @@ export const createProducto = async (req, res) => {
     );
     res.status(201).json({ id: rows.insertId, name, precio });
   } catch (error) {
-    return res.status(500).json({ message: "Something goes wrong" });
+    return res.status(500).json({ message: "No funcionó" });
   }
 };
 
@@ -73,6 +73,6 @@ export const updateProducto = async (req, res) => {
 
     res.json(rows[0]);
   } catch (error) {
-    return res.status(500).json({ message: "Something goes wrong" });
+    return res.status(500).json({ message: "No funcionó" });
   }
 };
